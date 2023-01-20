@@ -12,10 +12,12 @@ public class Player : MonoBehaviour
     public int index2;
     public int checknum = -1;
     public int[] checkPos;
-    
+
+    public List<Vector3> routine = new List<Vector3>(); // 플레이어 경로
 
 
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +26,15 @@ public class Player : MonoBehaviour
             index1 = 4; // 정중앙에 대한 일반화 한 식 나중에 넣어보기
             player.transform.position = tiles[4].transform.position;
             Debug.Log(player.transform.position);
+            GameManager.Routine(gameObject); // 최초 위치 초기화
         }
         if (player.tag == "Player2")
         {
             index2 = 13; // 정중앙에 대한 일반화 한 식 나중에 넣어보기
             player.transform.position = tiles[13].transform.position;
         }
-        
-        //tiles[0].GetComponent<Tile>().MakeBlue();
 
+        //tiles[0].GetComponent<Tile>().MakeBlue();
     }
 
     // Update is called once per frame
