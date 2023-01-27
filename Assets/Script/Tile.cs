@@ -22,16 +22,11 @@ public class Tile : MonoBehaviour
 
     }
 
-    public void MakeRed()
-    {       
-        GetComponent<MeshRenderer>().material = tileColor[1];
-        colorNumber = 1;       
-    }
-    public void MakeBlue()
-    {
-        GetComponent<MeshRenderer>().material = tileColor[2];
-        colorNumber = 2;
-    }
 
+    public void MakeColor(int id)
+    {
+        GetComponent<MeshRenderer>().material = tileColor[id];
+        colorNumber = id;
+    }
 
 }
