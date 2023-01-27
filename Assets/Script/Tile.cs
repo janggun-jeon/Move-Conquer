@@ -5,6 +5,8 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public Material[] tileColor;
+    public int currentColorNumber = 0; // 타일의 변화전 색깔 정보 저장
+    public int colorNumber; // 타일의 색깔 정보 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,14 @@ public class Tile : MonoBehaviour
     }
 
     public void MakeRed()
-    {
+    {       
         GetComponent<MeshRenderer>().material = tileColor[1];
+        colorNumber = 1;       
     }
     public void MakeBlue()
     {
         GetComponent<MeshRenderer>().material = tileColor[2];
+        colorNumber = 2;
     }
 
 

@@ -14,6 +14,6 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        timer.text = "Time : " + GameManager.time.ToString() + " sec";
+        timer.text = "Time : " + ((int)GameManager.time).ToString() + " sec";
     }
 }
